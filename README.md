@@ -1,1 +1,2 @@
-# Luhn_algo_check reame
+# Ruby Lab 
+# Home_task_4: Just run the file index.rb.
