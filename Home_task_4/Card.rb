@@ -20,6 +20,8 @@ class Card
     end
   end
 
+  private
+
   def empty_string_error
     'Empty string provided' unless number.empty?
   end

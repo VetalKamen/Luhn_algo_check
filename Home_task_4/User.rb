@@ -1,18 +1,13 @@
 class User
   attr_accessor :name, :age, :cards
 
-  def initialize(name, age)
+  def initialize(name)
     self.name = name
-    self.age = age
     self.cards = []
   end
 
-  def introduce
-    puts "Hi! My name is #{name} and I'm #{age} years old"
-  end
-
   def adult?
-    age > 13
+    age.to_i > 13
   end
 
   def add_card(card)

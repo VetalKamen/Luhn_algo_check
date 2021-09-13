@@ -9,15 +9,12 @@ predefined_card_numbers = %w[378282246310005 371449635398436 5610591081018253 38
                              3530111333300001 5105105105105100 4012888888881882]
 logger = Logger.new('checksum_check_history.txt')
 
-pasha = User.new('Pasha', 13)
-krysta = User.new('Krysta', 14)
-murka = User.new('Murka', 15)
-roman = User.new('Roman', 9)
-
-arr = [pasha, krysta, roman, murka]
-
-arr.each do |user|
-  user.introduce
+loop do
+  puts 'What is your name?'
+  user = User.new(gets.chomp)
+  puts 'How old are you?'
+  user.age = gets.chomp
+  p "Welcome #{user.name}!"
 
   unless user.adult?
     logger.info("Username:#{user.name}, age: #{user.age}, result has not been provided")
@@ -39,5 +36,6 @@ arr.each do |user|
     result = card.get_checksum
     logger.info("Username:#{user.name}, age: #{user.age}, result of the CC check:#{result}")
   end
-
+  puts 'Abort Program execution?'
+  break if gets.chomp == 'Yes'
 end
